@@ -3,7 +3,6 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-}
     stages{
         stage('sonarqube scan'){
             steps{
@@ -27,4 +26,5 @@ pipeline {
             "http://44.201.152.119:8081/artifactory/geoapp2/"'
         }
     }
+}
 }
