@@ -3,6 +3,7 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
+}
     stages{
         stage('sonarqube scan'){
             steps{
@@ -16,10 +17,11 @@ pipeline {
                 sh 'mvn clean test compile install package'
             }
         }
-    }
         stage('upload artifact'){
             steps{
 
+            
+            
             sh 'curl -uadmin:AP9VphspKafqA5vUwnY9zbUnvd6 -T \
             target/bio*.jar \
             "http://44.201.152.119:8081/artifactory/geoapp2/"'
