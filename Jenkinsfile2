@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('sonarqube scan'){
             agent {docker { image 'maven:3-amazoncorretto-17-debian' }}
-            steps{
+             steps{
                 withSonarQubeEnv('Sonarserver'){ 
 
               sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=patricktshibangu_Devops-week16-bis'
@@ -23,7 +23,7 @@ pipeline {
 
             
             
-            sh 'curl -uadmin:AP9VphspKafqA5vUwnY9zbUnvd6 -T target/bio*.jar "http://52.23.208.168:8081/artifactory/geoapp2/"'
+            sh 'curl -uadmin:AP9VphspKafqA5vUwnY9zbUnvd6 -T target/bio*.jar "http://44.201.36.220:8081/artifactory/geoapp2/"'
         }
     }
     stage('image build'){
